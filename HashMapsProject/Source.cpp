@@ -84,6 +84,48 @@ int main()
 	IteratorMap["DDE"] = 5;
 	IteratorMap["MST"] = 6;
 	IteratorMap["SEP"] = 9;
+	IteratorMap["SAP"] = 14;
+	IteratorMap["CRP"] = 42;
+	IteratorMap["CDP"] = 26;
+
+	//My raw version to initialize on one line and then iterate via For Loop 
+	std::unordered_map<std::string, int>::iterator IT = IteratorMap.begin();
+
+	std::cout << "Using an iterator over the Unordered Map\n";
+
+	for (size_t i = 0; i < IteratorMap.size(); i++)
+	{
+		std::cout << IT->second << "\n";
+		IT++;
+	}
+
+	//From the video, can also use auto function for iterators 
+	for (auto IT2 = IteratorMap.begin(); IT2 != IteratorMap.end(); IT2++)
+	{
+		std::cout << IT2->second << "\n";
+	}
+
+	if (IteratorMap.find("SAP") == IteratorMap.end())
+	{
+		std::cout << "Not Present\n";
+	}
+	else
+	{
+		std::cout << "The Element is Present\n";
+	}
+
+	std::unordered_map<std::string, int>::iterator IT3 = IteratorMap.find("SAP");
+
+	IteratorMap.erase(IT3);
+
+	if (IteratorMap.find("SAP") == IteratorMap.end())
+	{
+		std::cout << "Not Present\n";
+	}
+	else
+	{
+		std::cout << "The Element is Present\n";
+	}
 
 
 	return 0;
