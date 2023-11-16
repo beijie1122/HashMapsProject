@@ -17,6 +17,7 @@ std::vector<int> RemoveDuplicates(int* arr, int n)
 		}
 		else
 		{
+			//Not necessary, but nice to have
 			std::cout << "Duplicate Found!\n";
 		}
 	}
@@ -76,6 +77,14 @@ int main()
 	{
 		std::cout << OutputVector.at(i) << "\n";
 	}
+
+	std::unordered_map<std::string, int> IteratorMap;
+
+	IteratorMap["ABD"] = 1;
+	IteratorMap["DDE"] = 5;
+	IteratorMap["MST"] = 6;
+	IteratorMap["SEP"] = 9;
+
 
 	return 0;
 }
