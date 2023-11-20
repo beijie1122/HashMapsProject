@@ -2,6 +2,7 @@
 #include <unordered_map>
 #include <string>
 #include <vector>
+#include "Node.h"
 
 std::vector<int> RemoveDuplicates(int* arr, int n)
 {
