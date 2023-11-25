@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include "Node.h"
+#include "MyMap.h"
 
 std::vector<int> RemoveDuplicates(int* arr, int n)
 {
@@ -29,24 +30,24 @@ std::vector<int> RemoveDuplicates(int* arr, int n)
 
 int main()
 {
-	std::unordered_map<std::string, int> MyMap;
+	std::unordered_map<std::string, int> MyMap1;
 	
 	std::pair<std::string, int> p("ABC", 1);
 
-	MyMap.insert(p);
+	MyMap1.insert(p);
 
-	MyMap["DEF"] = 2;
+	MyMap1["DEF"] = 2;
 
 	//Find or access elements in the Map 
 
-	std::cout << MyMap["ABC"] << "\n";
-	std::cout << MyMap.at("ABC") << "\n";
+	std::cout << MyMap1["ABC"] << "\n";
+	std::cout << MyMap1.at("ABC") << "\n";
 
 	//std::cout << MyMap["GHI"] << "\n";
 
 	//Check presence of a key within a MyMap cause cannot use .at() or []
 
-	if (MyMap.count("GHI") > 0)
+	if (MyMap1.count("GHI") > 0)
 	{
 		std::cout << "GHI is present\n";
 	}
@@ -55,21 +56,21 @@ int main()
 		std::cout << "GHI is NOT present\n";
 	}
 
-	std::cout << "Size of our Map is: " << MyMap.size() << "\n";
+	std::cout << "Size of our Map is: " << MyMap1.size() << "\n";
 
-	MyMap["GHI"] = 5;
+	MyMap1["GHI"] = 5;
 
 	//Update Keys []
 
-	MyMap["ABC"] = 20;
+	MyMap1["ABC"] = 20;
 
 	//Find size of map 
 
-	std::cout << "Size of our Map is: " << MyMap.size() << "\n";
+	std::cout << "Size of our Map is: " << MyMap1.size() << "\n";
 
 	//Erasing Map Elements 
 
-	MyMap.erase("GHI");
+	MyMap1.erase("GHI");
 
 	int DuplicatesArray[] = { 1, 5 ,2 ,4, 4, 3, 3, 6, 7, 1, 1, 2 };
 	std::vector<int> OutputVector = RemoveDuplicates(DuplicatesArray, 12);
@@ -128,6 +129,18 @@ int main()
 		std::cout << "The Element is Present\n";
 	}
 
+	MyMap OurMap;
+
+	for (size_t i = 0; i < 10; i++)
+	{
+		char c = i;
+		std::string Key = "ade";
+		//Key = Key + c;
+		int Value = i + 1;
+		std::cout << Key << " " << OurMap.GetValue(Key);
+		std::cout << OurMap.GetLoadFactor();
+	}
+	std::cout << OurMap.size();
 
 	return 0;
 }
